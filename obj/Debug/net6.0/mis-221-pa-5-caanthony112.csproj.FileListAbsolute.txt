@@ -1,0 +1,15 @@
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/bin/Debug/net6.0/mis-221-pa-5-caanthony112
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/bin/Debug/net6.0/mis-221-pa-5-caanthony112.deps.json
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/bin/Debug/net6.0/mis-221-pa-5-caanthony112.runtimeconfig.json
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/bin/Debug/net6.0/mis-221-pa-5-caanthony112.dll
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/bin/Debug/net6.0/mis-221-pa-5-caanthony112.pdb
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/mis-221-pa-5-caanthony112.csproj.AssemblyReference.cache
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/mis-221-pa-5-caanthony112.GeneratedMSBuildEditorConfig.editorconfig
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/mis-221-pa-5-caanthony112.AssemblyInfoInputs.cache
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/mis-221-pa-5-caanthony112.AssemblyInfo.cs
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/mis-221-pa-5-caanthony112.csproj.CoreCompileInputs.cache
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/mis-221-pa-5-caanthony112.dll
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/refint/mis-221-pa-5-caanthony112.dll
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/mis-221-pa-5-caanthony112.pdb
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/mis-221-pa-5-caanthony112.genruntimeconfig.cache
+/Users/cannonanthony/Documents/MIS221/REPOS/PA5/mis-221-pa-5-caanthony112/obj/Debug/net6.0/ref/mis-221-pa-5-caanthony112.dll
