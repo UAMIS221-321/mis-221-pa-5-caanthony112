@@ -13,9 +13,13 @@ ReportUtility reportUtility = new ReportUtility(bookings);
 
 ReportRepo reportRepo = new ReportRepo();
 
-MenuUtility menuUtility = new MenuUtility(trainingUtility, listingUtility, bookingUtility, reportUtility, reportRepo);
+User[] users = new User[999];
+UserUtility userUtility = new UserUtility(users);
+
+MenuUtility menuUtility = new MenuUtility(trainingUtility, listingUtility, bookingUtility, reportUtility, reportRepo, userUtility);
 
 // main
+// menuUtility.LoginMenu();
 menuUtility.IntroMenu();
 menuUtility.PauseAction();
 int userChoice = GetUserChoice();

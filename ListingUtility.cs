@@ -100,7 +100,20 @@ namespace mis_221_pa_5_caanthony112
         }
 
         public void DeleteListing(){
-            
+            System.Console.WriteLine("What is the Listing ID of the Listing you would like to delete?");
+            string searchVal = Console.ReadLine();
+            int foundIndex = Find(searchVal);
+            if(foundIndex != -1) {
+                for(int i = foundIndex; i < Trainer.GetCount() - 1; i++) {
+                    listings[i] = listings[i + 1];
+                }
+                Listing.DecCount();
+                Save();
+                System.Console.WriteLine("Listing deleted successfully.");
+            }
+            else {
+            System.Console.WriteLine("Listing not found :(");
+            }
         }
     }
 }

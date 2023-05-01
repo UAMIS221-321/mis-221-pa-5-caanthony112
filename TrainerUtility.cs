@@ -90,9 +90,22 @@ namespace mis_221_pa_5_caanthony112
         }
 
         public void DeleteTrainer() {
-            
-        }
+            System.Console.WriteLine("What is the Trainer ID of the trainer you would like to delete?");
+            int searchNum = int.Parse(Console.ReadLine());
 
+            int foundIndex = Find(searchNum);
+            if(foundIndex != -1) {
+            for(int i = foundIndex; i < Trainer.GetCount() - 1; i++) {
+                trainers[i] = trainers[i + 1];
+            }
+            Trainer.DecCount();
+            Save();
+            System.Console.WriteLine("Trainer deleted successfully.");
+            }
+            else {
+            System.Console.WriteLine("Trainer not found :(");
+            }
+        }
     
     }
 }

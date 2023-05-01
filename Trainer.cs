@@ -77,6 +77,10 @@ namespace mis_221_pa_5_caanthony112
             Trainer.count++;
         }
 
+        static public void DecCount() {
+            Trainer.count--;
+        }
+
 
 
 

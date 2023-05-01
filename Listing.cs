@@ -89,6 +89,8 @@ namespace mis_221_pa_5_caanthony112
             return $"{listingId}#{trainerName}#{sessionDate}#{sessionTime}#{sessionCost}#{listingStatus}";
         }
 
-
+        static public void DecCount() {
+            Listing.count--;
+        }
     }
 }

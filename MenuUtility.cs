@@ -12,16 +12,19 @@ namespace mis_221_pa_5_caanthony112
 
         private ReportRepo reportRepo;
 
+        private UserUtility userUtility;
+
         public MenuUtility() {
 
         }
 
-        public MenuUtility(TrainerUtility trainerUtility, ListingUtility listingUtility, BookingUtility bookingUtility, ReportUtility reportUtility, ReportRepo reportRepo){
+        public MenuUtility(TrainerUtility trainerUtility, ListingUtility listingUtility, BookingUtility bookingUtility, ReportUtility reportUtility, ReportRepo reportRepo, UserUtility userUtility){
             this.trainerUtility = trainerUtility;
             this.listingUtility = listingUtility;
             this.bookingUtility = bookingUtility;
             this.reportUtility = reportUtility;
             this.reportRepo = reportRepo;
+            this.userUtility = userUtility;
         }
         public void TrainerMenu() {
             Console.Clear();
@@ -46,6 +49,7 @@ namespace mis_221_pa_5_caanthony112
                 trainerUtility.EditTrainer();
                 break;
             case 3:
+                trainerUtility.GetTrainersFromFile();
                 trainerUtility.DeleteTrainer();
                 break;
             default:
@@ -75,6 +79,7 @@ namespace mis_221_pa_5_caanthony112
                     listingUtility.EditListing();
                     break;
                 case 3:
+                    listingUtility.GetListingsFromFile();
                     listingUtility.DeleteListing();
                     break;
                 default:
@@ -166,7 +171,56 @@ namespace mis_221_pa_5_caanthony112
                \ V  V /  __/ | (_| (_) | | | | | |  __/ |_|
                 \_/\_/ \___|_|\___\___/|_| |_| |_|\___| (_)
             ");
-        }       
+        }    
+
+        public void LoginMenu(){
+            int userChoice = GetUserChoice();
+            while(userChoice != 3){
+                RouteEm(userChoice, userUtility);
+                userChoice = GetUserChoice();
+            }
+            
+        }
+
+        public int GetUserChoice() {
+            InteractiveMenu();
+            string userChoice = Console.ReadLine();
+            if(IsValidChoice(userChoice)){
+                return int.Parse(userChoice);
+            }
+            else return 0;
+        }
+
+        public bool IsValidChoice(string userChoice) {
+            if(userChoice=="1" || userChoice=="2" || userChoice== "3") {
+                return true;
+            }
+            return false;
+        }
+        public void InteractiveMenu() {
+            Console.Clear();
+            Console.WriteLine("=========================================");
+            Console.WriteLine("|          Login or Register            |");
+            Console.WriteLine("=========================================");
+            Console.WriteLine("|    Please choose an option:           |");
+            Console.WriteLine("|    1. Login                           |");
+            Console.WriteLine("|    2. Register                        |");
+            Console.WriteLine("|    3. Exit                            |");
+            Console.WriteLine("=========================================");
+        }
+        public void RouteEm(int menuChoice, UserUtility userUtility) {
+            if(menuChoice==1) {
+                userUtility.GetUsers();
+            }
+            else if(menuChoice==2) {
+                userUtility.GetUsersFromFile();
+                userUtility.CheckUser();
+            }
+            else if(menuChoice==3) {
+                SayInvalid();
+            }
+        }
     }
 }
+
     
