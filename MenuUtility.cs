@@ -104,7 +104,9 @@ namespace mis_221_pa_5_caanthony112
             switch (option)
             {
                 case 1:
-                    bookingUtility.AvailableSession();
+                    listingUtility.GetListingsFromFile();
+                    listingUtility.PrintAllListings();
+                    PauseAction();
                     break;
                 case 2:
                     bookingUtility.GetAllBookings();

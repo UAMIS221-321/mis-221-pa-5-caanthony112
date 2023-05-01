@@ -14,7 +14,7 @@ namespace mis_221_pa_5_caanthony112
 
         private string trainerName;
 
-        private bool bookingStatus;
+        private bool isTaken;
 
         static private int count;
 
@@ -22,12 +22,13 @@ namespace mis_221_pa_5_caanthony112
 
         }
 
-        public Booking(int sessionId, string customerName, string customerEmail, int trainingDate, int trainerId, string trainerName) {
+        public Booking(int sessionId, string customerName, string customerEmail, int trainingDate, int trainerId, string trainerName, bool isTaken) {
             this.sessionId = sessionId;
             this.customerName = customerName;
             this.customerEmail = customerEmail;
             this.trainingDate = trainingDate;
             this.trainerId = trainerId;
+            this.isTaken = isTaken;
         }
 
         public void SetSessionId(int sessionId) {
@@ -78,7 +79,7 @@ namespace mis_221_pa_5_caanthony112
             return trainerName;
         }
 
-        public bool BookingStatus() {
+        public bool IfBookingTaken() {
             return true;
         }
 
@@ -95,7 +96,11 @@ namespace mis_221_pa_5_caanthony112
         }
 
         public string ToFile(){
-            return $"{sessionId}#{trainerName}#{customerEmail}#{trainingDate}#{trainerId}#{trainerName}#{bookingStatus}";
+            return $"{sessionId}#{trainerName}#{customerEmail}#{trainingDate}#{trainerId}#{trainerName}#{isTaken}";
+        }
+
+        public void SetIsTaken(bool isTaken){
+            this.isTaken = isTaken;
         }
 
     }

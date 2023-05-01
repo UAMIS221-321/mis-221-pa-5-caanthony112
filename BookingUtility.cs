@@ -31,9 +31,8 @@ namespace mis_221_pa_5_caanthony112
                 System.Console.WriteLine("Please enter the trainer name");
                 bookings[Booking.GetCount()].SetTrainerName(Console.ReadLine());
 
-
-                // System.Console.WriteLine("Is the listing taken? Yes or no");
-                // bookings[Booking.GetCount()].IfListingTaken(Console.ReadLine());
+                System.Console.WriteLine("Is the booking taken? True or False");
+                bookings[Booking.GetCount()].SetIsTaken(bool.Parse(Console.ReadLine()));
 
                 Booking.IncCount();
 
@@ -68,20 +67,25 @@ namespace mis_221_pa_5_caanthony112
             int searchVal = int.Parse(Console.ReadLine());
             int foundIndex = Find(searchVal);
             if(foundIndex != -1){
-                System.Console.WriteLine("Please enter the customer name");
+                System.Console.WriteLine("Please entet the new session ID");
+
+                System.Console.WriteLine("Please enter the new customer name");
                 bookings[foundIndex].SetCustomerName(Console.ReadLine());
 
-                System.Console.WriteLine("Please enter the customer email");
+                System.Console.WriteLine("Please enter the new customer email");
                 bookings[foundIndex].SetCustomerEmail(Console.ReadLine());
 
-                System.Console.WriteLine("Please enter the training date");
+                System.Console.WriteLine("Please enter the new training date");
                 bookings[foundIndex].SetTrainingDate(int.Parse(Console.ReadLine()));
 
-                System.Console.WriteLine("Please enter the trainer ID");
+                System.Console.WriteLine("Please enter the new trainer ID");
                 bookings[foundIndex].SetTrainerId(int.Parse(Console.ReadLine()));
 
-                System.Console.WriteLine("Please enter the trainer name");
+                System.Console.WriteLine("Please enter the new trainer name");
                 bookings[foundIndex].SetTrainerName(Console.ReadLine());
+
+                System.Console.WriteLine("Please enter if the booking is taken or not True or False");
+                bookings[foundIndex].SetIsTaken(bool.Parse(Console.ReadLine()));
 
                 Save();
             }
@@ -97,15 +101,11 @@ namespace mis_221_pa_5_caanthony112
             string line = inFile.ReadLine();
             while(line != null){
                 string[] temp = line.Split("#");
-                bookings[Booking.GetCount()] = new Booking(int.Parse(temp[0]), temp[1], temp[2], int.Parse(temp[3]), int.Parse(temp[4]), temp[5]); //, temp[5])
+                bookings[Booking.GetCount()] = new Booking(int.Parse(temp[0]), temp[1], temp[2], int.Parse(temp[3]), int.Parse(temp[4]), temp[5], bool.Parse(temp[6])); 
                 Booking.IncCount();
                 line = inFile.ReadLine();
             }
             inFile.Close();
-        }
-
-        public void AvailableSession(){
-            
         }
     }
 }

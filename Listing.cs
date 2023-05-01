@@ -12,7 +12,7 @@ namespace mis_221_pa_5_caanthony112
 
         private int sessionCost;
 
-        private bool listingStatus;
+        private bool isTaken;
 
         static private int count;
 
@@ -20,13 +20,13 @@ namespace mis_221_pa_5_caanthony112
 
         }
 
-        public Listing(string listingId, string trainerName, int sessionDate, int sessionTime, int sessionCost) {  // bool listingStatus
+        public Listing(string listingId, string trainerName, int sessionDate, int sessionTime, int sessionCost, bool isTaken) {  
             this.listingId = listingId;
             this.trainerName = trainerName;
             this.sessionDate = sessionDate;
             this.sessionTime = sessionTime;
             this.sessionCost = sessionCost;
-            // this.listingStatus = listingStatus;
+            this.isTaken = isTaken;
         }
         // ask for an explanation on Constructors and what they are doing here
         public void SetListingId(string listingId) {
@@ -86,11 +86,20 @@ namespace mis_221_pa_5_caanthony112
         }
 
         public string ToFile(){
-            return $"{listingId}#{trainerName}#{sessionDate}#{sessionTime}#{sessionCost}#{listingStatus}";
+            return $"{listingId}#{trainerName}#{sessionDate}#{sessionTime}#{sessionCost}#{isTaken}";
         }
 
         static public void DecCount() {
             Listing.count--;
+        }
+
+        public void SetIsTaken(bool isTaken) {
+            this.isTaken = isTaken;
+        }
+
+        public override string ToString() 
+        {
+            return $"{this.listingId}\t{this.trainerName}\t{this.sessionDate}\t{this.sessionTime}\t{this.sessionCost}\t{this.isTaken}";
         }
     }
 }

@@ -28,8 +28,8 @@ namespace mis_221_pa_5_caanthony112
                 System.Console.WriteLine("Please enter the cost of session");
                 listings[Listing.GetCount()].SetSessionCost(int.Parse(Console.ReadLine()));
 
-                // System.Console.WriteLine("Is the listing taken? Yes or no");
-                // listings[Listing.GetCount()].IfListingTaken(Console.ReadLine());
+                System.Console.WriteLine("Is the listing taken? True or False");
+                listings[Listing.GetCount()].SetIsTaken(bool.Parse(Console.ReadLine()));
 
                 Listing.IncCount();
 
@@ -92,7 +92,7 @@ namespace mis_221_pa_5_caanthony112
             string line = inFile.ReadLine();
             while(line != null){
                 string[] temp = line.Split("#");
-                listings[Listing.GetCount()] = new Listing(temp[0], temp[1], int.Parse(temp[2]), int.Parse(temp[3]), int.Parse(temp[4])); //, temp[5])
+                listings[Listing.GetCount()] = new Listing(temp[0], temp[1], int.Parse(temp[2]), int.Parse(temp[3]), int.Parse(temp[4]), bool.Parse(temp[5])); 
                 Listing.IncCount();
                 line = inFile.ReadLine();
             }
@@ -113,6 +113,12 @@ namespace mis_221_pa_5_caanthony112
             }
             else {
             System.Console.WriteLine("Listing not found :(");
+            }
+        }
+
+        public void PrintAllListings() {
+            for(int i = 0; i < Listing.GetCount(); i++){
+                System.Console.WriteLine(listings[i].ToString());
             }
         }
     }

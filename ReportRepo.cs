@@ -28,7 +28,7 @@ namespace mis_221_pa_5_caanthony112
         }
 
         public void ProcessBreak(ref string curr, ref int sessionId, ref string customerName, ref int trainingDate, ref int trainerId, ref string trainerName, Booking newBooking){
-            System.Console.WriteLine($"{sessionId}\t{customerName}\t{curr}\n{trainingDate}\n{trainerId}\n{trainerName}");
+            System.Console.WriteLine($"{sessionId}\t{customerName}\t{curr}\t{trainingDate}\t{trainerId}\t{trainerName}");
             curr = newBooking.GetCustomerEmail();
             sessionId = newBooking.GetSessionId();
             customerName = newBooking.GetCustomerName();
@@ -38,7 +38,26 @@ namespace mis_221_pa_5_caanthony112
         }
 
         public void ProcessBreak(string curr, int sessionId, string customerName, int trainingDate, int trainerId, string trainerName){
-            System.Console.WriteLine($"{sessionId}\t{customerName}\n{curr}\t{trainingDate}\n{trainerId}\n{trainerName}");
+            System.Console.WriteLine($"{sessionId}\t{customerName}\t{curr}\t{trainingDate}\t{trainerId}\t{trainerName}");
+        }
+
+        public void DateByCustomer() {
+            string cust = bookings[0].GetCustomerName();
+            int date = bookings[0].GetTrainingDate();
+            for(int i = 1; i < Booking.GetCount(); i++) {
+                if(bookings[i].GetCustomerName() == cust) {
+                    cust = bookings[i].GetCustomerName();
+                    date = bookings[i].GetTrainingDate();
+                    System.Console.WriteLine();
+                }
+                else {
+                    Break();
+                }
+            }
+        }
+
+        public void Break(){
+
         }
     }
 }
